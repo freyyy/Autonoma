@@ -45,7 +45,7 @@
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height>
-        <router-view></router-view>
+        <router-view style="width: 100%"></router-view>
       </v-container>
     </v-content>
   </v-app>

@@ -1,9 +1,12 @@
 <template>
     <v-data-table
+            :props="props"
             :headers="headers"
             :items="desserts"
+            :loading="true"
             class="elevation-1"
     >
+        <v-progress-linear slot="progress" color="blue" indeterminate></v-progress-linear>
         <template slot="items" slot-scope="props">
             <td>{{ props.item.name }}</td>
             <td class="text-xs-right">{{ props.item.calories }}</td>
@@ -20,6 +23,11 @@
     export default {
         data() {
             return {
+                props: [
+                    {
+                        rowsPerPage: 25
+                    }
+                ],
                 headers: [
                     {
                         text: 'Dessert (100g serving)',
