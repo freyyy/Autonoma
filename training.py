@@ -2,9 +2,9 @@ import pandas as pd
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 from joblib import dump, load
-import numpy
 
 # load data
 data = pd.read_csv('employee_data.csv')
@@ -29,24 +29,39 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 
 # create gradient boosting classifier
 gb = GradientBoostingClassifier()
+rf = RandomForestClassifier()
 
 # train model using the training set
 gb.fit(X_train, y_train)
+rf.fit(X_train, y_train)
 
 # save model
 dump(gb, 'gb.joblib')
+dump(rf, 'rf.joblib')
 
 # load model
 gb = load('gb.joblib')
+rf = load('rf.joblib')
 
 # preditct the response using the test set
-y_pred = gb.predict(X_test)
+gb_y_pred = gb.predict(X_test)
+rf_y_pred = rf.predict(X_test)
 
-# evaluate model performance
-print("Accuracy:", metrics.accuracy_score(y_test, y_pred))
-print("Precision:", metrics.precision_score(y_test, y_pred))
-print("Recall:", metrics.recall_score(y_test, y_pred))
+# evaluate gradient boosting classifier performance
+print("Gradient Boosting Classifier")
+print("Accuracy:", metrics.accuracy_score(y_test, gb_y_pred))
+print("Precision:", metrics.precision_score(y_test, gb_y_pred))
+print("Recall:", metrics.recall_score(y_test, gb_y_pred))
+print(gb.feature_importances_)
+gb_y_pred_proba = gb.predict_proba(X_test)
+print(gb_y_pred_proba)
 
-y_pred_proba = gb.predict_proba(X_test)
+# evaluate gradient boosting classifier performance
+print("Random Forest Classifier")
+print("Accuracy:", metrics.accuracy_score(y_test, rf_y_pred))
+print("Precision:", metrics.precision_score(y_test, rf_y_pred))
+print("Recall:", metrics.recall_score(y_test, rf_y_pred))
+print(rf.feature_importances_)
 
-print(y_pred_proba)
+rf_y_pred_proba = rf.predict_proba(X_test)
+print(rf_y_pred_proba)
