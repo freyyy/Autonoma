@@ -1,13 +1,13 @@
 <template>
-  <HelloWorld />
+  <kalendar/>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  import Kalendar from '../components/Kalendar'
 
   export default {
     components: {
-      HelloWorld
-    }
+      Kalendar
+    },
   }
 </script>
