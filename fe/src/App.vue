@@ -57,7 +57,7 @@ export default {
     dialog: false,
     drawer: null,
     items: [
-      { icon: "home", text: "Dashboard", href: "index" },
+      { icon: "home", text: "Dashboard", href: "" },
       { icon: "contacts", text: "Team", href: "team" },
       { icon: "content_copy", text: "Departments", href: "departments" },
       { icon: "settings", text: "Settings" },
