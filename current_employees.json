@@ -1,5 +1,6 @@
 [
   {
+    "Name": "Palmer Tatum",
     "Departments": "sales",
     "Work_accident": 0,
     "average_montly_hours": 157,
@@ -13,6 +14,7 @@
     "time_spend_company": 3
   },
   {
+    "Name": "Brenda Cayden",
     "Departments": "sales",
     "Work_accident": 0,
     "average_montly_hours": 136,
@@ -26,6 +28,7 @@
     "time_spend_company": 3
   },
   {
+    "Name": "Charlene Scotty",
     "Departments": "sales",
     "Work_accident": 0,
     "average_montly_hours": 272,
@@ -39,6 +42,35 @@
     "time_spend_company": 4
   },
   {
+    "Name": "Dax Karen",
+    "Departments": "product_mng",
+    "Work_accident": 0,
+    "average_montly_hours": 152,
+    "empId": 1975,
+    "last_evaluation": 0.48,
+    "left": 1,
+    "number_project": 2,
+    "promotion_last_5years": 0,
+    "salary": "medium",
+    "satisfaction_level": 0.36,
+    "time_spend_company": 3
+  },
+  {
+    "Name": "Garfield Jerrod",
+    "Departments": "product_mng",
+    "Work_accident": 0,
+    "average_montly_hours": 138,
+    "empId": 1976,
+    "last_evaluation": 0.54,
+    "left": 1,
+    "number_project": 2,
+    "promotion_last_5years": 0,
+    "salary": "medium",
+    "satisfaction_level": 0.46,
+    "time_spend_company": 3
+  },
+  {
+    "Name": "Dreda Alanis",
     "Departments": "sales",
     "Work_accident": 0,
     "average_montly_hours": 238,
@@ -52,6 +84,7 @@
     "time_spend_company": 2
   },
   {
+    "Name": "Lora Jinny",
     "Departments": "technical",
     "Work_accident": 0,
     "average_montly_hours": 181,
@@ -65,6 +98,7 @@
     "time_spend_company": 3
   },
   {
+    "Name": "Chanelle Gorden",
     "Departments": "technical",
     "Work_accident": 0,
     "average_montly_hours": 192,
@@ -78,6 +112,7 @@
     "time_spend_company": 4
   },
   {
+    "Name": "Renie Corinna",
     "Departments": "technical",
     "Work_accident": 0,
     "average_montly_hours": 270,
@@ -89,5 +124,75 @@
     "salary": "low",
     "satisfaction_level": 0.92,
     "time_spend_company": 3
+  },
+  {
+    "Name": "Virginia Huey",
+    "Departments": "technical",
+    "Work_accident": 0,
+    "average_montly_hours": 169,
+    "empId": 9199,
+    "last_evaluation": 0.9,
+    "left": 0,
+    "number_project": 3,
+    "promotion_last_5years": 0,
+    "salary": "low",
+    "satisfaction_level": 0.91,
+    "time_spend_company": 3
+  },
+  {
+    "Name": "Estelle Nyree",
+    "Departments": "technical",
+    "Work_accident": 1,
+    "average_montly_hours": 132,
+    "empId": 9200,
+    "last_evaluation": 0.71,
+    "left": 0,
+    "number_project": 3,
+    "promotion_last_5years": 0,
+    "salary": "low",
+    "satisfaction_level": 0.72,
+    "time_spend_company": 2
+  },
+  {
+    "Name": "Tel Sienna",
+    "Departments": "technical",
+    "Work_accident": 0,
+    "average_montly_hours": 197,
+    "empId": 9201,
+    "last_evaluation": 0.72,
+    "left": 0,
+    "number_project": 3,
+    "promotion_last_5years": 0,
+    "salary": "low",
+    "satisfaction_level": 0.96,
+    "time_spend_company": 3
+  },
+  {
+    "Name": "Devan Gwenda",
+    "Departments": "technical",
+    "Work_accident": 0,
+    "average_montly_hours": 152,
+    "empId": 9202,
+    "last_evaluation": 0.89,
+    "left": 0,
+    "number_project": 4,
+    "promotion_last_5years": 0,
+    "salary": "low",
+    "satisfaction_level": 1,
+    "time_spend_company": 3
+  },
+  {
+    "Name": "Kae Jannah",
+    "Departments": "technical",
+    "Work_accident": 0,
+    "average_montly_hours": 126,
+    "empId": 9203,
+    "last_evaluation": 0.51,
+    "left": 0,
+    "number_project": 3,
+    "promotion_last_5years": 0,
+    "salary": "low",
+    "satisfaction_level": 0.63,
+    "time_spend_company": 6
   }
 ]
