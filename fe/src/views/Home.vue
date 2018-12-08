@@ -18,7 +18,7 @@ const todos = [
   {
     description:
       "Please check Marian because it seems that he is not ok with his salary",
-    isComplete: true,
+    isComplete: false,
     dates: new Date(2018, 11, 7),
     color: "#ff8080" // Red
   },

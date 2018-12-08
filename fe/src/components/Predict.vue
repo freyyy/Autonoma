@@ -79,12 +79,12 @@
                 <v-flex xs12>
                   <div align="center" v-if="churn.data === 0">
                     <v-icon class="green--text">insert_emoticon</v-icon>
-                    <h2>User seems to be happy</h2>
+                    <h2>Employee seems to be happy</h2>
                     <h3>No action needed</h3>
                   </div>
                   <div align="center" v-else-if="churn.data === 1">
                     <v-icon class="red--text">sentiment_very_dissatisfied</v-icon>
-                    <h2>User seems to be unhappy</h2>
+                    <h2>Employee seems to be unhappy</h2>
                   </div>
                 </v-flex>
               </v-layout>

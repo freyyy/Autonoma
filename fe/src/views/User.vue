@@ -12,12 +12,12 @@
         <v-flex xs7 class="user-details">
           <div v-if="employee.churn === 0">
             <v-icon class="green--text">insert_emoticon</v-icon>
-            <h2>User seems to be happy</h2>
+            <h2>Employee seems to be happy</h2>
             <h3>No action needed</h3>
           </div>
           <div v-else-if="employee.churn === 1">
             <v-icon class="red--text">sentiment_very_dissatisfied</v-icon>
-            <h2>User seems to be unhappy</h2>
+            <h2>Employee seems to be unhappy</h2>
             <h3>Meeting created. Please check your appointment dashboard.</h3>
           </div>
         </v-flex>
