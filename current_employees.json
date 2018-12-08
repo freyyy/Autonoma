@@ -15,6 +15,32 @@
   {
     "Departments": "sales",
     "Work_accident": 0,
+    "average_montly_hours": 136,
+    "empId": 1401,
+    "last_evaluation": 0.47,
+    "left": 1,
+    "number_project": 2,
+    "promotion_last_5years": 0,
+    "salary": "medium",
+    "satisfaction_level": 0.45,
+    "time_spend_company": 3
+  },
+  {
+    "Departments": "sales",
+    "Work_accident": 0,
+    "average_montly_hours": 272,
+    "empId": 1402,
+    "last_evaluation": 0.87,
+    "left": 1,
+    "number_project": 6,
+    "promotion_last_5years": 0,
+    "salary": "medium",
+    "satisfaction_level": 0.11,
+    "time_spend_company": 4
+  },
+  {
+    "Departments": "sales",
+    "Work_accident": 0,
     "average_montly_hours": 238,
     "empId": 7500,
     "last_evaluation": 0.58,
@@ -24,5 +50,44 @@
     "salary": "medium",
     "satisfaction_level": 0.93,
     "time_spend_company": 2
+  },
+  {
+    "Departments": "technical",
+    "Work_accident": 0,
+    "average_montly_hours": 181,
+    "empId": 6620,
+    "last_evaluation": 0.85,
+    "left": 0,
+    "number_project": 4,
+    "promotion_last_5years": 0,
+    "salary": "low",
+    "satisfaction_level": 0.75,
+    "time_spend_company": 3
+  },
+  {
+    "Departments": "technical",
+    "Work_accident": 0,
+    "average_montly_hours": 192,
+    "empId": 6621,
+    "last_evaluation": 0.93,
+    "left": 0,
+    "number_project": 6,
+    "promotion_last_5years": 0,
+    "salary": "low",
+    "satisfaction_level": 0.17,
+    "time_spend_company": 4
+  },
+  {
+    "Departments": "technical",
+    "Work_accident": 0,
+    "average_montly_hours": 270,
+    "empId": 6622,
+    "last_evaluation": 0.83,
+    "left": 0,
+    "number_project": 5,
+    "promotion_last_5years": 0,
+    "salary": "low",
+    "satisfaction_level": 0.92,
+    "time_spend_company": 3
   }
 ]
