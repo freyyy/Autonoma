@@ -49,8 +49,8 @@ class Model:
         rf_y_left_pred = self.rf_left.predict(X_left_test)
 
         print("Accuracy:", metrics.accuracy_score(y_left_test, rf_y_left_pred))
-        print("Precision:", metrics.precision_score(y_left_test, rf_y_left_pred, average=None))
-        print("Recall:", metrics.recall_score(y_left_test, rf_y_left_pred, average=None))
+        print("Precision:", metrics.precision_score(y_left_test, rf_y_left_pred, average='micro'))
+        print("Recall:", metrics.recall_score(y_left_test, rf_y_left_pred, average='micro'))
         print(self.rf_left.feature_importances_)
 
 
