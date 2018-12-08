@@ -1,6 +1,6 @@
 
 #!flask/bin/python
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import json
 import numpy as np
 from model import Model
@@ -23,6 +23,20 @@ def employee(id):
     current_employee = next(emp for emp in current_employees if emp['empId'] == int(id))
     add_churn(current_employee)
     return jsonify(current_employee)
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    content = request.json
+    return jsonify(model.predict(np.array([[
+        content['last_evaluation'],
+        content['number_project'],
+        content['average_montly_hours'],
+        content['time_spend_company'],
+        content['Work_accident'],
+        content['promotion_last_5years'],
+        content['Departments'],
+        content['salary'],
+    ]])).tolist()[0])
 
 @app.route('/features', methods=['GET'])
 def features():
