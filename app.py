@@ -4,8 +4,10 @@ from flask import Flask, jsonify
 import json
 import numpy as np
 from model import Model
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 model = Model()
 
 @app.route('/employees', methods=['GET'])
