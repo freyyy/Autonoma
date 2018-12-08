@@ -12,9 +12,12 @@
       <tr @click="goTo(`/user/${props.item.empId}`)">
         <td>{{ props.item.Name }}</td>
         <td class="text-xs-right">{{ props.item.Departments }}</td>
+        <td class="text-xs-right">{{ props.item.Work_accident }}</td>
+        <td class="text-xs-right">{{ props.item.average_montly_hours }}</td>
         <td class="text-xs-right">{{ props.item.number_project }}</td>
         <td class="text-xs-right">{{ props.item.salary }}</td>
         <td class="text-xs-right">{{ props.item.time_spend_company }}</td>
+        <td class="text-xs-right">{{ props.item.estimated_years_in_company }}</td>
         <td class="text-xs-center">
           <v-icon class="red--text" v-if="props.item.churn === 1">sentiment_very_dissatisfied</v-icon>
           <v-icon class="green--text" v-else>insert_emoticon</v-icon>
@@ -55,9 +58,12 @@ export default {
           value: "name"
         },
         { text: "Deparment", value: "Departments", align: "right" },
+        { text: "Work Accidents", value: "carbs", align: "right" },
+        { text: "Average Monthly Hours", value: "carbs", align: "right" },
         { text: "Numbar of Projects", value: "fat", align: "right" },
         { text: "Salary", value: "carbs", align: "right" },
         { text: "Time spend in company", value: "protein", align: "right" },
+        { text: "Estimated years in company", align: "center", value: "churn" },
         { text: "Churn", align: "center", value: "churn" }
       ],
       employees: []
