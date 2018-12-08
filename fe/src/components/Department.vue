@@ -6,7 +6,7 @@
         mounted () {
             // Overwriting base render method with actual data.
             this.renderChart({
-                labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+                labels: ["asdsadsads", "Asia", "Europe", "Latin America", "North America"],
                 datasets: [
                     {
                         label: "Population (millions)",

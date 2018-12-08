@@ -1,142 +1,67 @@
 <template>
-    <v-data-table
-            :props="props"
-            :headers="headers"
-            :items="desserts"
-            :loading="false"
-            class="elevation-1"
-    >
-        <v-progress-linear slot="progress" color="blue" indeterminate></v-progress-linear>
-        <template slot="items" slot-scope="props">
-            <tr @click="goTo(`/user/${props.item.calories}`)">
-                <td>{{ props.item.name }}</td>
-                <td class="text-xs-right">{{ props.item.calories }}</td>
-                <td class="text-xs-right">{{ props.item.fat }}</td>
-                <td class="text-xs-right">{{ props.item.carbs }}</td>
-                <td class="text-xs-right">{{ props.item.protein }}</td>
-                <td class="text-xs-right">{{ props.item.iron }}</td>
-            </tr>
-        </template>
-    </v-data-table>
+  <v-data-table
+    :rows-per-page-items="rowsPerPageItems"
+    :pagination.sync="pagination"
+    :headers="headers"
+    :items="employees"
+    :loading="false"
+    class="elevation-1"
+  >
+    <v-progress-linear slot="progress" color="blue" indeterminate></v-progress-linear>
+    <template slot="items" slot-scope="props">
+      <tr @click="goTo(`/user/${props.item.empId}`)">
+        <td>{{ props.item.Name }}</td>
+        <td class="text-xs-right">{{ props.item.Departments }}</td>
+        <td class="text-xs-right">{{ props.item.number_project }}</td>
+        <td class="text-xs-right">{{ props.item.salary }}</td>
+        <td class="text-xs-right">{{ props.item.time_spend_company }}</td>
+        <td class="text-xs-center">
+          <v-icon class="red--text" v-if="props.item.churn === 1">sentiment_very_dissatisfied</v-icon>
+          <v-icon class="green--text" v-else>insert_emoticon</v-icon>
+        </td>
+      </tr>
+    </template>
+  </v-data-table>
 </template>
 
 
 <script>
-    export default {
-        methods: {
-            goTo(url) {
-                this.$router.push(url);
-            }
+import { HTTP } from "../config/http-common.js";
+export default {
+  methods: {
+    goTo(url) {
+      this.$router.push(url);
+    },
+    async init() {
+      this.employees = await HTTP.get("employees");
+      this.employees = this.employees.data;
+      console.log(this.employees);
+    }
+  },
+  mounted() {
+    this.init();
+  },
+  data() {
+    return {
+      rowsPerPageItems: [10, 20, 30, 40],
+      pagination: {
+        rowsPerPage: 20
+      },
+      headers: [
+        {
+          text: "Employee",
+          align: "center",
+          sortable: false,
+          value: "name"
         },
-        data() {
-            return {
-                headers: [
-                    {
-                        text: "Dessert (100g serving)",
-                        align: "center",
-                        sortable: false,
-                        value: "name"
-                    },
-                    {text: "Calories", value: "calories", align: "center"},
-                    {text: "Fat (g)", value: "fat", align: "center"},
-                    {text: "Carbs (g)", value: "carbs", align: "center"},
-                    {text: "Protein (g)", value: "protein", align: "center"},
-                    {text: "Iron (%)", value: "iron", align: "center"},
-                    {text: "Nav", align: "center"}
-                ],
-                desserts: [
-                    {
-                        value: false,
-                        name: "Frozen Yogurt",
-                        calories: 159,
-                        fat: 6.0,
-                        carbs: 24,
-                        protein: 4.0,
-                        iron: "1%"
-                    },
-                    {
-                        value: false,
-                        name: "Ice cream sandwich",
-                        calories: 237,
-                        fat: 9.0,
-                        carbs: 37,
-                        protein: 4.3,
-                        iron: "1%"
-                    },
-                    {
-                        value: false,
-                        name: "Eclair",
-                        calories: 262,
-                        fat: 16.0,
-                        carbs: 23,
-                        protein: 6.0,
-                        iron: "7%"
-                    },
-                    {
-                        value: false,
-                        name: "Cupcake",
-                        calories: 305,
-                        fat: 3.7,
-                        carbs: 67,
-                        protein: 4.3,
-                        iron: "8%"
-                    },
-                    {
-                        value: false,
-                        name: "Gingerbread",
-                        calories: 356,
-                        fat: 16.0,
-                        carbs: 49,
-                        protein: 3.9,
-                        iron: "16%"
-                    },
-                    {
-                        value: false,
-                        name: "Jelly bean",
-                        calories: 375,
-                        fat: 0.0,
-                        carbs: 94,
-                        protein: 0.0,
-                        iron: "0%"
-                    },
-                    {
-                        value: false,
-                        name: "Lollipop",
-                        calories: 392,
-                        fat: 0.2,
-                        carbs: 98,
-                        protein: 0,
-                        iron: "2%"
-                    },
-                    {
-                        value: false,
-                        name: "Honeycomb",
-                        calories: 408,
-                        fat: 3.2,
-                        carbs: 87,
-                        protein: 6.5,
-                        iron: "45%"
-                    },
-                    {
-                        value: false,
-                        name: "Donut",
-                        calories: 452,
-                        fat: 25.0,
-                        carbs: 51,
-                        protein: 4.9,
-                        iron: "22%"
-                    },
-                    {
-                        value: false,
-                        name: "KitKat",
-                        calories: 518,
-                        fat: 26.0,
-                        carbs: 65,
-                        protein: 7,
-                        iron: "6%"
-                    }
-                ]
-            };
-        }
+        { text: "Deparment", value: "Departments", align: "right" },
+        { text: "Numbar of Projects", value: "fat", align: "right" },
+        { text: "Salary", value: "carbs", align: "right" },
+        { text: "Time spend in company", value: "protein", align: "right" },
+        { text: "Churn", align: "center", value: "churn" }
+      ],
+      employees: []
     };
+  }
+};
 </script>
