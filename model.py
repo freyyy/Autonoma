@@ -68,6 +68,9 @@ class Model:
         print(employee_data)
         return self.rf_left.predict(employee_data)
 
+    def feature_importances(self):
+        return self.rf.feature_importances_
+
 if __name__ == '__main__':
     model = Model()
     prediction = model.predict(np.array([[0.9, 20, 190, 5, 0, 0, "IT", "high"]]))

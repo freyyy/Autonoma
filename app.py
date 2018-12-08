@@ -8,19 +8,29 @@ from model import Model
 app = Flask(__name__)
 model = Model()
 
-@app.route('/users', methods=['GET'])
-def users():
+@app.route('/employees', methods=['GET'])
+def employees():
     current_employees = read_users()
     for current_employee in current_employees:
         add_churn(current_employee)
     return jsonify(current_employees)
 
-@app.route('/users/<id>', methods=['GET'])
-def user(id):
+@app.route('/employees/<id>', methods=['GET'])
+def employee(id):
     current_employees = read_users()
     current_employee = next(emp for emp in current_employees if emp['empId'] == int(id))
     add_churn(current_employee)
     return jsonify(current_employee)
+
+@app.route('/features', methods=['GET'])
+def features():
+    feature_importances = model.feature_importances()
+    features = {}
+    features['last_evaluation'] = feature_importances[0] * 100
+    features['number_project'] = feature_importances[1] * 100
+    features['average_monthly_hours'] = feature_importances[2] * 100
+    features['time_spend_company'] = feature_importances[3] * 100
+    return jsonify(features)
 
 def read_users():
     with open('current_employees.json') as f:
